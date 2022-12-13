@@ -41,6 +41,7 @@ class ride {
          out.println("STAY");
       }
 
+      
       out.close();                                  // close the output file
    }
 }
