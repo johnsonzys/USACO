@@ -25,23 +25,23 @@ public class gift1 {
         while (i<k){
             String p = f.readLine();
             int index = m.indexOf(p);
-                    String amount = f.readLine();
-                    int money = Integer.parseInt(amount.substring(0,amount.indexOf(" ")));
-                    int person = Integer.parseInt(amount.substring(amount.indexOf(" ")+1));
-                    e[index].income-=money;
-                    if (person==0)
-                        e[index].income+=0;
-                    else
-                        e[index].income+=money%person;
-
-
-                    for (int q=0; q<person; q++){
-                        String eachGain= f.readLine();
-                        index=m.indexOf(eachGain);
-                        e[index].income+=money/person;
-                        
-                    }
-
+            String amount = f.readLine();
+            int money = Integer.parseInt(amount.substring(0,amount.indexOf(" ")));
+            int person = Integer.parseInt(amount.substring(amount.indexOf(" ")+1));
+            e[index].income-=money;
+            if (person==0)
+              e[index].income+=0;
+            else
+              e[index].income+=money%person;
+    
+    
+            for (int q=0; q<person; q++){
+              String eachGain= f.readLine();
+              index=m.indexOf(eachGain);
+              e[index].income+=money/person;
+                
+            }
+    
             i++;
         }
        for (int q=0; q<k; q++){
