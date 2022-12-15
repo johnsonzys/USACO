@@ -6,7 +6,7 @@ TASK: gift1
 import java.io.*;
 import java.util.*;
 
-public class gift1 {
+public class gift1_t {
    public static void main (String[] args) throws IOException{
      BufferedReader br=new BufferedReader(new FileReader("gift1.in"));
      Map map = new HashMap<String, Integer>();
@@ -24,17 +24,19 @@ public class gift1 {
        int count_r = Integer.parseInt(st.nextToken());
        // update map using amount and count_r
 
-       amount /= count_r*count_r;
-       map.put(giver, map.get(giver)-amount); //update of giver
-       amount = amount/count_r;
-       for(int ii=0;ii<count_r;ii++){
+       if(count_r>0){
+        amount /= count_r*count_r;
+        map.put(giver, (int)(map.get(giver))-amount); //update of giver
+        amount = amount/count_r;
+        for(int ii=0;ii<count_r;ii++){
          String r = br.readLine();
-         map.put(r, map.get(r)+amount); // update of reciever
+         map.put(r, (int)(map.get(r))+amount); // update of reciever
+        }
        }
      }
      PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("gift1.out")));
      for(int i=0;i<count;i++){
-       pw.print(names[i]+" "+map.get(names[i]));
+       pw.print(names[i]+" "+map.get(names[i])+"\n");
      }
      pw.close();
    }
