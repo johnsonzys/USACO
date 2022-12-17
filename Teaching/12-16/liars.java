@@ -10,8 +10,8 @@ public class liars {
         Information[] infos = new Information[n];
         for (int j = 0; j < n; j++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            char c = st.nextToken().charAt(0);
-            int v = Integer.parseInt(st.nextToken());
+            char c = st.nextToken().charAt(0); // L 6
+            int v = Integer.parseInt(st.nextToken()); // String -> int/Integer 
             infos[j] = new Information(c, v);
         }
         int answer = n;

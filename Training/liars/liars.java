@@ -19,6 +19,12 @@ public class liars {
         Collections.sort(L);
         Collections.sort(G);
         int min1=0;
+
+      // min_G max_L
+      int min_G = G.get(0);
+      int max_L = L.get(L.size()-1);
+
+      // longer length
         for (int i=0; i<L.size(); i++){
             for (int g=G.size()-1; g>-1; g--){
                 if (L.get(i)<G.get(g))

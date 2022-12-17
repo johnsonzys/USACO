@@ -14,8 +14,8 @@ public class liars_t {
             StringTokenizer st = new StringTokenizer(br.readLine());
             char c = st.nextToken().charAt(0);
             int v = Integer.parseInt(st.nextToken());
-            // System.out.println(c);
-            // System.out.println(v);
+            System.out.println(c);
+            System.out.println(v);
             if(c == 'L'){
                 L.add(v);
             }
