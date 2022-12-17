@@ -5,6 +5,8 @@ public class liars_tc {
 
     static ArrayList<Integer> L = new ArrayList<Integer>();
     static ArrayList<Integer> G = new ArrayList<Integer>();
+
+    static ArrayList<Integer> LG = new ArrayList<Integer>();
     public static void main (String [] args) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader("liars.in"));
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("liars.out")));
