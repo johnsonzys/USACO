@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class CowGymnastics {
+public class CowGymnastics_t {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int iter = scanner.nextInt();
@@ -16,20 +16,14 @@ public class CowGymnastics {
       n.add(o);
     }
 
-    int[] temp = n.get(0);
-    int count=0;
-
     
     for (int i=0; i<cows-1; i++){
       for (int j=i+1; j<cows; j++){
-          count+=1;
-        // helper(i, j)
-         for (int k=1; k<iter; k++){ // iterate in ArrayList<int[]>
+         for (int k=1; k<n.size(); k++){ // iterate in ArrayList<int[]>
             int firstTermIndex = Arrays.asList(n.get(k)).indexOf(temp[i]);
             int secondTermIndex= Arrays.asList(n.get(k)).indexOf(temp[j]);
             if (firstTermIndex>secondTermIndex){
-               //count--;
-               break;
+
             }
          
          }
