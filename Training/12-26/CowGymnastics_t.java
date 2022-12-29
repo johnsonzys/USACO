@@ -6,26 +6,35 @@ public class CowGymnastics_t {
     Scanner scanner = new Scanner(System.in);
     int iter = scanner.nextInt();
     int cows = scanner.nextInt();
-    ArrayList<int[]> n = new ArrayList<int[]>();
+    ArrayList<ArrayList<Integer>> n = new ArrayList<ArrayList<Integer>>();
     for (int i=0; i<iter; i++){
-    int[] o = new int[cows];
+    ArrayList<Integer> o = new ArrayList<Integer>();
       for (int j=0; j<cows; j++){
-         o[j]=scanner.nextInt();
-      
+         o.add(scanner.nextInt());
       }
       n.add(o);
     }
 
+    int count = 0;
     
-    for (int i=0; i<cows-1; i++){
-      for (int j=i+1; j<cows; j++){
-         for (int k=1; k<n.size(); k++){ // iterate in ArrayList<int[]>
-            int firstTermIndex = Arrays.asList(n.get(k)).indexOf(temp[i]);
-            int secondTermIndex= Arrays.asList(n.get(k)).indexOf(temp[j]);
+    for (int i=1; i<=cows-1; i++){
+      for (int j=i+1; j<=cows; j++){
+        // System.out.println(i+" "+j);
+         for (int k=0; k<n.size(); k++){ // iterate in ArrayList<int[]>
+            int recorder = 0;
+            Integer firstTermIndex = n.get(k).indexOf(i);
+            Integer secondTermIndex = n.get(k).indexOf(j);
+            // System.out.println(firstTermIndex+", "+secondTermIndex);
             if (firstTermIndex>secondTermIndex){
-
+              recorder++;
             }
-         
+            else{
+              recorder--;
+            }
+            if(recorder == 3 || recorder == -3){
+              // System.out.println("Yes");
+              count++;
+             }
          }
       }
     }
