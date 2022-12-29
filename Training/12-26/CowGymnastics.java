@@ -4,19 +4,21 @@ import java.util.*;
 public class CowGymnastics {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+
+      
     int iter = scanner.nextInt();
     int cows = scanner.nextInt();
-    ArrayList<int[]> n = new ArrayList<int[]>();
+    ArrayList<ArrayList<Integer>> n = new ArrayList<ArrayList<Integer>>();
     for (int i=0; i<iter; i++){
-    int[] o = new int[cows];
+    ArrayList<Integer> o = new ArrayList<Integer>();
       for (int j=0; j<cows; j++){
-         o[j]=scanner.nextInt();
-      
+         o.add(scanner.nextInt());
       }
       n.add(o);
     }
 
-    int[] temp = n.get(0);
+    
+    ArrayList<Integer> temp = n.get(0);
     int count=0;
 
     
@@ -25,10 +27,13 @@ public class CowGymnastics {
           count+=1;
         // helper(i, j)
          for (int k=1; k<iter; k++){ // iterate in ArrayList<int[]>
-            int firstTermIndex = Arrays.asList(n.get(k)).indexOf(temp[i]);
-            int secondTermIndex= Arrays.asList(n.get(k)).indexOf(temp[j]);
+            int firstTermIndex = n.get(k).indexOf(temp.get(i));
+            //System.out.print(firstTermIndex);
+            int secondTermIndex = n.get(k).indexOf(temp.get(j));
+            //System.out.print(secondTermIndex);
+            //System.out.println();
             if (firstTermIndex>secondTermIndex){
-               //count--;
+               count--;
                break;
             }
          
