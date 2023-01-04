@@ -6,8 +6,6 @@ public class MilkMeasurement_t {
     Scanner scanner = new Scanner(System.in);
     int n = scanner.nextInt();
     scanner.nextLine();
-
-    // initialize file I/O
     
     // read in all of the notes
     int[] day = new int[n];
